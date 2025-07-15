@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kiro-mcp-memory"
-version = "1.2.0"
+version = "1.2.1"
 description = "Enhanced MCP server for Kiro memory and task management with AI-powered features"
 readme = "README.md"
 license = "MIT"
