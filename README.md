@@ -1,6 +1,6 @@
 # Enhanced MCP Memory
 
-> **Note**: This MCP server works best with Claude Sonnet 4 for optimal AI-powered memory and task management capabilities.
+> **⚡ Optimized for Claude Sonnet 4** - This MCP server works best with Claude Sonnet 4 for optimal performance and AI-powered features.
 
 An enhanced MCP (Model Context Protocol) server for intelligent memory and task management, designed for AI assistants and development workflows. Features semantic search, automatic task extraction, knowledge graphs, and comprehensive project management.
 
@@ -20,7 +20,7 @@ An enhanced MCP (Model Context Protocol) server for intelligent memory and task 
 - **Task-memory relationships** in knowledge graph
 - **Project-based organization**
 
-### 🔧 Enhanced Features
+### 🔧 Enterprise Features
 - **Performance monitoring** with detailed metrics
 - **Health checks** and system diagnostics
 - **Automatic cleanup** of old data and duplicates
