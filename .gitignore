@@ -21,6 +21,8 @@ parts/
 sdist/
 var/
 *.egg-info/
+kiro_mcp_memory.egg-info/
+enhanced_mcp_memory.egg-info/
 .installed.cfg
 *.egg
 
