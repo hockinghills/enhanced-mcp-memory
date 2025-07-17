@@ -1,12 +1,12 @@
-# Kiro MCP Memory - Installation Guide
+# Enhanced MCP Memory - Installation Guide
 
 ## Quick Start with uvx (Recommended)
 
-The easiest way to install and run Kiro MCP Memory is using `uvx`:
+The easiest way to install and run Enhanced MCP Memory is using `uvx`:
 
 ```bash
 # Install and run directly
-uvx kiro-mcp-memory
+uvx enhanced-mcp-memory
 ```
 
 This will automatically:
@@ -24,7 +24,7 @@ Add this to your MCP client configuration file:
   "mcpServers": {
     "memory-manager": {
       "command": "uvx",
-      "args": ["kiro-mcp-memory"],
+      "args": ["enhanced-mcp-memory"],
       "env": {
         "LOG_LEVEL": "INFO",
         "MAX_MEMORY_ITEMS": "1000",
@@ -42,7 +42,7 @@ Add this to your MCP client configuration file:
     "memory-manager": {
       "command": "python",
       "args": ["mcp_server_enhanced.py"],
-      "cwd": "/path/to/kiro-mcp-memory",
+      "cwd": "/path/to/enhanced-mcp-memory",
       "env": {
         "LOG_LEVEL": "INFO",
         "MAX_MEMORY_ITEMS": "1000",
@@ -57,28 +57,28 @@ Add this to your MCP client configuration file:
 
 ### Method 1: pip install from PyPI (when published)
 ```bash
-pip install kiro-mcp-memory
-kiro-mcp-memory
+pip install enhanced-mcp-memory
+enhanced-mcp-memory
 ```
 
 ### Method 2: pip install from source
 ```bash
-pip install git+https://github.com/cbunting99/kiro-mcp-memory.git
-kiro-mcp-memory
+pip install git+https://github.com/cbunting99/enhanced-mcp-memory.git
+enhanced-mcp-memory
 ```
 
 ### Method 3: Development installation
 ```bash
-git clone https://github.com/cbunting99/kiro-mcp-memory.git
-cd kiro-mcp-memory
+git clone https://github.com/cbunting99/enhanced-mcp-memory.git
+cd enhanced-mcp-memory
 pip install -e .
-kiro-mcp-memory
+enhanced-mcp-memory
 ```
 
 ### Method 4: Run directly from source
 ```bash
-git clone https://github.com/cbunting99/kiro-mcp-memory.git
-cd kiro-mcp-memory
+git clone https://github.com/cbunting99/enhanced-mcp-memory.git
+cd enhanced-mcp-memory
 pip install -r requirements.txt
 python mcp_server_enhanced.py
 ```

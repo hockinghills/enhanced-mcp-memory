@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test runner for kiro-mcp-memory
+Test runner for enhanced-mcp-memory
 """
 import sys
 import os
@@ -16,7 +16,7 @@ def run_tests():
         'test_mcp_protocol.py'
     ]
     
-    print("🧪 Running Kiro MCP Memory Tests")
+    print("🧪 Running Enhanced MCP Memory Tests")
     print("=" * 50)
     
     all_passed = True

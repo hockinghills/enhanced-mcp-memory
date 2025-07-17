@@ -1,4 +1,6 @@
-# Kiro MCP Memory
+# Enhanced MCP Memory
+
+> **Note**: This MCP server works best with Claude Sonnet 4 for optimal AI-powered memory and task management capabilities.
 
 An enhanced MCP (Model Context Protocol) server for intelligent memory and task management, designed for AI assistants and development workflows. Features semantic search, automatic task extraction, knowledge graphs, and comprehensive project management.
 
@@ -34,7 +36,7 @@ An enhanced MCP (Model Context Protocol) server for intelligent memory and task 
 ## 🏗️ Project Structure
 
 ```
-kiro-mcp-memory/
+enhanced-mcp-memory/
 ├── mcp_server_enhanced.py    # Main MCP server
 ├── memory_manager.py         # Core memory/task logic
 ├── database.py              # Database operations
@@ -51,27 +53,27 @@ kiro-mcp-memory/
 
 ```bash
 # Install and run with uvx
-uvx kiro-mcp-memory
+uvx enhanced-mcp-memory
 ```
 
 ### Option 2: Manual Installation
 
 ```bash
 # Clone and install
-git clone https://github.com/cbunting99/kiro-mcp-memory.git
-cd kiro-mcp-memory
+git clone https://github.com/cbunting99/enhanced-mcp-memory.git
+cd enhanced-mcp-memory
 pip install -e .
 
 # Run the server
-kiro-mcp-memory
+enhanced-mcp-memory
 ```
 
 ### Option 3: Development Setup
 
 ```bash
 # Clone repository
-git clone https://github.com/cbunting99/kiro-mcp-memory.git
-cd kiro-mcp-memory
+git clone https://github.com/cbunting99/enhanced-mcp-memory.git
+cd enhanced-mcp-memory
 
 # Install dependencies
 pip install -r requirements.txt
@@ -90,7 +92,7 @@ Add to your MCP client configuration:
   "mcpServers": {
     "memory-manager": {
       "command": "uvx",
-      "args": ["kiro-mcp-memory"],
+      "args": ["enhanced-mcp-memory"],
       "env": {
         "LOG_LEVEL": "INFO",
         "MAX_MEMORY_ITEMS": "1000",
@@ -108,7 +110,7 @@ Add to your MCP client configuration:
     "memory-manager": {
       "command": "python",
       "args": ["mcp_server_enhanced.py"],
-      "cwd": "/path/to/kiro-mcp-memory",
+      "cwd": "/path/to/enhanced-mcp-memory",
       "env": {
         "LOG_LEVEL": "INFO",
         "MAX_MEMORY_ITEMS": "1000",
@@ -215,9 +217,9 @@ MIT License - see LICENSE file for details.
 
 ## 🆘 Support
 
-- **Issues**: [GitHub Issues](https://github.com/cbunting99/kiro-mcp-memory/issues)
-- **Documentation**: [README](https://github.com/cbunting99/kiro-mcp-memory#readme)
-- **Discussions**: [GitHub Discussions](https://github.com/cbunting99/kiro-mcp-memory/discussions)
+- **Issues**: [GitHub Issues](https://github.com/cbunting99/enhanced-mcp-memory/issues)
+- **Documentation**: [README](https://github.com/cbunting99/enhanced-mcp-memory#readme)
+- **Discussions**: [GitHub Discussions](https://github.com/cbunting99/enhanced-mcp-memory/discussions)
 
 ## 🏷️ Version History
 

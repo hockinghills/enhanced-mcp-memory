@@ -1,1 +1,1 @@
-# Test package for kiro-mcp-memory
+# Test package for enhanced-mcp-memory

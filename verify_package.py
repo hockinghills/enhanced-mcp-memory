@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Verification script for kiro-mcp-memory package
+Verification script for enhanced-mcp-memory package
 """
 import sys
 import os
@@ -9,7 +9,7 @@ import subprocess
 
 def verify_package():
     """Verify the package is properly configured"""
-    print("🔍 Verifying Kiro MCP Memory Package")
+    print("🔍 Verifying Enhanced MCP Memory Package")
     print("=" * 50)
     
     # Test 1: Import main modules
@@ -62,13 +62,13 @@ def verify_package():
     print("\n4. Testing package metadata...")
     try:
         import pkg_resources
-        dist = pkg_resources.get_distribution('kiro-mcp-memory')
+        dist = pkg_resources.get_distribution('enhanced-mcp-memory')
         print(f"   ✅ Package version: {dist.version}")
         print(f"   ✅ Package location: {dist.location}")
         
         # Check entry points
         entry_points = list(dist.get_entry_map().get('console_scripts', {}).keys())
-        if 'kiro-mcp-memory' in entry_points:
+        if 'enhanced-mcp-memory' in entry_points:
             print("   ✅ Console script entry point configured")
         else:
             print("   ❌ Console script entry point missing")
@@ -112,11 +112,11 @@ def verify_package():
     print("   • Package is ready for uvx distribution")
     
     print("\n🚀 To use with uvx:")
-    print("   uvx kiro-mcp-memory")
+    print("   uvx enhanced-mcp-memory")
     
     print("\n⚙️  MCP Configuration:")
     print('   "command": "uvx",')
-    print('   "args": ["kiro-mcp-memory"]')
+    print('   "args": ["enhanced-mcp-memory"]')
     
     return True
 

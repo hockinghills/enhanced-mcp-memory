@@ -7,19 +7,19 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
 
 setup(
-    name="kiro-mcp-memory",
+    name="enhanced-mcp-memory",
     version="1.2.0",
-    description="Enhanced MCP server for Kiro memory and task management with AI-powered features",
+    description="Enhanced MCP server for memory and task management with AI-powered features",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="cbunting99",
     author_email="cbunting99@users.noreply.github.com",
-    url="https://github.com/cbunting99/kiro-mcp-memory",
+    url="https://github.com/cbunting99/enhanced-mcp-memory",
     py_modules=["mcp_server_enhanced", "memory_manager", "database"],
     install_requires=requirements,
     entry_points={
         "console_scripts": [
-            "kiro-mcp-memory=mcp_server_enhanced:main",
+            "enhanced-mcp-memory=mcp_server_enhanced:main",
         ],
     },
     python_requires=">=3.8",
@@ -40,8 +40,8 @@ setup(
     ],
     keywords="mcp, memory, ai, task-management, knowledge-graph, semantic-search",
     project_urls={
-        "Bug Reports": "https://github.com/cbunting99/kiro-mcp-memory/issues",
-        "Source": "https://github.com/cbunting99/kiro-mcp-memory",
-        "Documentation": "https://github.com/cbunting99/kiro-mcp-memory#readme",
+        "Bug Reports": "https://github.com/cbunting99/enhanced-mcp-memory/issues",
+        "Source": "https://github.com/cbunting99/enhanced-mcp-memory",
+        "Documentation": "https://github.com/cbunting99/enhanced-mcp-memory#readme",
     },
 )

@@ -1,5 +1,5 @@
 """
-Enhanced MCP Server for Kiro Memory Management
+Enhanced MCP Server for Memory Management
 Automatically manages memories, knowledge graphs, and tasks with improved features
 """
 
@@ -103,7 +103,7 @@ def track_performance(func):
     return wrapper
 
 # Initialize MCP server
-mcp = FastMCP("Kiro_MCP_Memory_Enhanced")
+mcp = FastMCP("Enhanced_MCP_Memory")
 
 # Initialize database and memory manager
 data_dir = base_dir / "data"
@@ -321,7 +321,7 @@ def initialize_session():
 def main():
     """Main server entry point"""
     try:
-        logger.info("🚀 Kiro MCP Memory Server (Enhanced) starting...")
+        logger.info("🚀 Enhanced MCP Memory Server starting...")
         logger.info(f"📊 Configuration: {config.__dict__}")
         logger.info(f"💾 Database: {db_path}")
         
@@ -339,7 +339,7 @@ def main():
     finally:
         if db_manager:
             db_manager.close()
-        logger.info("🛑 Kiro MCP Memory Server stopped")
+        logger.info("🛑 Enhanced MCP Memory Server stopped")
 
 if __name__ == "__main__":
     main()
