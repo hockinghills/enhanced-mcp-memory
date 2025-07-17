@@ -18,7 +18,7 @@ An enhanced MCP (Model Context Protocol) server for intelligent memory and task 
 - **Task-memory relationships** in knowledge graph
 - **Project-based organization**
 
-### 🔧 Enterprise Features
+### 🔧 Enhanced Features
 - **Performance monitoring** with detailed metrics
 - **Health checks** and system diagnostics
 - **Automatic cleanup** of old data and duplicates
