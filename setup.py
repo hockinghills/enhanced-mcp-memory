@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="enhanced-mcp-memory",
-    version="1.2.0",
+    version="1.2.1",
     description="Enhanced MCP server for memory and task management with AI-powered features",
     long_description=long_description,
     long_description_content_type="text/markdown",
