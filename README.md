@@ -148,6 +148,7 @@ Configure via environment variables:
 | `ENABLE_AUTO_CLEANUP` | `true` | Enable automatic cleanup |
 | `MAX_CONCURRENT_REQUESTS` | `5` | Max concurrent requests |
 | `REQUEST_TIMEOUT` | `30` | Request timeout in seconds |
+| `DATA_DIR` | ~/ClaudeMemory | Where to store data and logs |
 
 ## 🧪 Testing
 

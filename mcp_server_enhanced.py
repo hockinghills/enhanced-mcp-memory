@@ -25,7 +25,10 @@ from database import DatabaseManager
 from memory_manager import MemoryManager
 
 # Configure logging
-base_dir = Path(os.path.dirname(os.path.abspath(__file__)))
+base_dir = Path(os.path.abspath(os.getenv(
+    'DATA_DIR',
+    os.getenv('HOME')+'/ClaudeMemory')))
+base_dir.mkdir(exist_ok=True)
 log_dir = base_dir / "logs"
 log_dir.mkdir(exist_ok=True)
 log_file = log_dir / f"mcp_memory_{datetime.now().strftime('%Y%m%d')}.log"
