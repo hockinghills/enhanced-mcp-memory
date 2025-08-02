@@ -8,14 +8,20 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="enhanced-mcp-memory",
-    version="1.2.1",
-    description="Enhanced MCP server for memory and task management with AI-powered features",
+    version="2.0.2",
+    description="Enterprise-grade MCP server with sequential thinking, project convention learning, and intelligent memory management",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="cbunting99",
     author_email="cbunting99@users.noreply.github.com",
     url="https://github.com/cbunting99/enhanced-mcp-memory",
-    py_modules=["mcp_server_enhanced", "memory_manager", "database"],
+    py_modules=[
+        "mcp_server_enhanced", 
+        "memory_manager", 
+        "database", 
+        "sequential_thinking", 
+        "project_conventions"
+    ],
     install_requires=requirements,
     entry_points={
         "console_scripts": [
@@ -26,7 +32,6 @@ setup(
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
@@ -38,7 +43,7 @@ setup(
         "Topic :: Database",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
-    keywords="mcp, memory, ai, task-management, knowledge-graph, semantic-search",
+    keywords="mcp, memory, ai, task-management, knowledge-graph, semantic-search, sequential-thinking, project-conventions, enterprise, token-optimization",
     project_urls={
         "Bug Reports": "https://github.com/cbunting99/enhanced-mcp-memory/issues",
         "Source": "https://github.com/cbunting99/enhanced-mcp-memory",
