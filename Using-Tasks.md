@@ -1,3 +1,0 @@
-My primary motivation for developing this MCP server was to address a significant gap in existing editors and extensions: the absence of an integrated task management system. This often caused the AI to lose focus and direction.
-
-With this server, adding tasks is easy. You just write your prompt detailing what you want to build, and then instruct the AI to create and complete a sequential list of tasks. To ensure optimal workflow, it's best to specify a maximum of 6-8 tasks. Without this constraint, the AI could generate an extensive list of 10, 15, or even 20 tasks, which can be less efficient. For smaller projects, 6-8 tasks strikes the perfect balance.
