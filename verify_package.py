@@ -9,7 +9,7 @@ import subprocess
 
 def verify_package():
     """Verify the package is properly configured"""
-    print("🔍 Verifying Enhanced MCP Memory Package")
+    print("Verifying Enhanced MCP Memory Package")
     print("=" * 50)
     
     # Test 1: Import main modules
