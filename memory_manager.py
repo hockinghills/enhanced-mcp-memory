@@ -418,6 +418,13 @@ class MemoryManager:
         # Get pending tasks
         tasks = self.db.get_tasks(self.current_project_id, status='pending', limit=5)
         
+        # Get project conventions (environment, commands, etc.)
+        convention_memories = []
+        convention_types = ['environment', 'commands', 'tools', 'pattern']
+        for conv_type in convention_types:
+            conv_memories = self.db.search_memories(conv_type, self.current_project_id, limit=2)
+            convention_memories.extend(conv_memories)
+        
         # Format context
         context_parts = []
         
@@ -426,21 +433,38 @@ class MemoryManager:
         context_parts.append(f"## Current Project: {project_info.get('name', 'Unknown')}")
         if project_info.get('description'):
             context_parts.append(f"Description: {project_info['description']}")
+        
+        # Project conventions and environment
+        if convention_memories:
+            context_parts.append("\n## 🏗️ Project Environment & Conventions")
+            for memory in convention_memories[:4]:  # Limit to most important
+                memory_type = memory['type'].title()
+                title = memory['title']
+                # Show key content preview
+                content_lines = memory['content'].split('\n')[:3]
+                content_preview = '\n'.join(content_lines)
+                if len(memory['content'].split('\n')) > 3:
+                    content_preview += "\n..."
+                
+                context_parts.append(f"\n### {memory_type}: {title}")
+                context_parts.append(content_preview)
+            
+            context_parts.append("\n⚠️ IMPORTANT: Always follow project-specific conventions shown above!")
             
         # Memory summary
         memory_counts = summary.get('memory_counts', {})
         if memory_counts:
-            context_parts.append(f"Memory Summary: {dict(memory_counts)}")
+            context_parts.append(f"\nMemory Summary: {dict(memory_counts)}")
             
         # Recent memories
         if memories:
-            context_parts.append("## Relevant Memories:")
+            context_parts.append("\n## Relevant Memories:")
             for memory in memories:
                 context_parts.append(f"- [{memory['type']}] {memory['title']}")
                 
         # Pending tasks
         if tasks:
-            context_parts.append("## Pending Tasks:")
+            context_parts.append("\n## Pending Tasks:")
             for task in tasks:
                 context_parts.append(f"- [{task['priority']}] {task['title']}")
                 
