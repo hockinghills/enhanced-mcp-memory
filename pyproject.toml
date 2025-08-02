@@ -4,21 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "enhanced-mcp-memory"
-version = "1.2.1"
-description = "Enhanced MCP server for memory and task management with AI-powered features"
+version = "2.0.2"
+description = "Enterprise-grade MCP server with sequential thinking, project convention learning, and intelligent memory management"
 readme = "README.md"
-license = "MIT"
+license = {text = "MIT"}
 authors = [
     {name = "cbunting99", email = "cbunting99@users.noreply.github.com"}
 ]
 maintainers = [
     {name = "cbunting99", email = "cbunting99@users.noreply.github.com"}
 ]
-keywords = ["mcp", "memory", "ai", "task-management", "knowledge-graph", "semantic-search"]
+keywords = ["mcp", "memory", "ai", "task-management", "knowledge-graph", "semantic-search", "sequential-thinking", "project-conventions", "enterprise", "token-optimization"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
@@ -59,7 +58,10 @@ Documentation = "https://github.com/cbunting99/enhanced-mcp-memory#readme"
 enhanced-mcp-memory = "mcp_server_enhanced:main"
 
 [tool.setuptools]
-py-modules = ["mcp_server_enhanced", "memory_manager", "database"]
+py-modules = ["mcp_server_enhanced", "memory_manager", "database", "sequential_thinking", "project_conventions"]
+
+[tool.setuptools.package-data]
+"*" = ["*.py"]
 
 [tool.black]
 line-length = 100
