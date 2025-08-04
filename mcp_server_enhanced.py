@@ -25,6 +25,7 @@ from database import DatabaseManager
 from memory_manager import MemoryManager
 from sequential_thinking import SequentialThinkingEngine, ThinkingStage
 from project_conventions import ProjectConventionLearner
+from enhanced_automation_middleware import EnhancedAutomationMiddleware
 
 # Configure logging
 base_dir = Path(os.path.dirname(os.path.abspath(__file__)))
@@ -104,18 +105,22 @@ def track_performance(func):
             perf_tracker.track_call(func.__name__, duration, success)
     return wrapper
 
-# Initialize MCP server
-mcp = FastMCP("Enhanced_MCP_Memory")
-
 # Initialize database and memory manager
 data_dir = base_dir / "data"
 data_dir.mkdir(exist_ok=True)
 db_path = data_dir / "mcp_memory.db"
 
 db_manager = DatabaseManager(str(db_path))
-memory_manager = MemoryManager(db_manager)
+convention_learner = ProjectConventionLearner(None, db_manager)
+memory_manager = MemoryManager(db_manager, convention_learner)
+convention_learner.memory_manager = memory_manager
 thinking_engine = SequentialThinkingEngine(db_manager, memory_manager)
-convention_learner = ProjectConventionLearner(memory_manager, db_manager)
+
+# Initialize MCP server
+mcp = FastMCP("Enhanced_MCP_Memory")
+
+# Add enhanced automation middleware
+mcp.add_middleware(EnhancedAutomationMiddleware(memory_manager, thinking_engine))
 
 # Load environment variables
 load_dotenv()
