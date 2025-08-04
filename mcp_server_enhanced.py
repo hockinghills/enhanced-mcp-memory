@@ -893,6 +893,15 @@ def main():
         # Initialize session
         initialize_session()
         logger.info(f"📁 Current project: {memory_manager.current_project_id}")
+
+        logger.info("Available features:")
+        logger.info(" - Memory management and optimization")
+        logger.info(" - Task creation, tracking, and status updates")
+        logger.info(" - Project convention learning and suggestions")
+        logger.info(" - Sequential thinking and problem decomposition")
+        logger.info(" - Context summarization and chat session management")
+        logger.info(" - Performance and health monitoring")
+        logger.info(" - Automated cleanup and data management")
         
         # Run the FastMCP server
         mcp.run()

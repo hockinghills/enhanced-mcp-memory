@@ -9,7 +9,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="enhanced-mcp-memory",
     version="2.0.2",
-    description="Enterprise-grade MCP server with sequential thinking, project convention learning, and intelligent memory management",
+    description="MCP server with sequential thinking, project convention learning, and intelligent memory management",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="cbunting99",
@@ -43,7 +43,7 @@ setup(
         "Topic :: Database",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
-    keywords="mcp, memory, ai, task-management, knowledge-graph, semantic-search, sequential-thinking, project-conventions, enterprise, token-optimization",
+    keywords="mcp, memory, ai, task-management, knowledge-graph, semantic-search, sequential-thinking, project-conventions, token-optimization",
     project_urls={
         "Bug Reports": "https://github.com/cbunting99/enhanced-mcp-memory/issues",
         "Source": "https://github.com/cbunting99/enhanced-mcp-memory",

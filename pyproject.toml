@@ -14,7 +14,7 @@ authors = [
 maintainers = [
     {name = "cbunting99", email = "cbunting99@users.noreply.github.com"}
 ]
-keywords = ["mcp", "memory", "ai", "task-management", "knowledge-graph", "semantic-search", "sequential-thinking", "project-conventions", "enterprise", "token-optimization"]
+keywords = ["mcp", "memory", "ai", "task-management", "knowledge-graph", "semantic-search", "sequential-thinking", "project-conventions", "token-optimization"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
