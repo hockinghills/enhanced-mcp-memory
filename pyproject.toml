@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "enhanced-mcp-memory"
-version = "2.0.2"
+version = "2.0.8"
 description = "Enterprise-grade MCP server with sequential thinking, project convention learning, and intelligent memory management"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "cbunting99", email = "cbunting99@users.noreply.github.com"}
 ]
@@ -58,7 +58,7 @@ Documentation = "https://github.com/cbunting99/enhanced-mcp-memory#readme"
 enhanced-mcp-memory = "mcp_server_enhanced:main"
 
 [tool.setuptools]
-py-modules = ["mcp_server_enhanced", "memory_manager", "database", "sequential_thinking", "project_conventions"]
+py-modules = ["mcp_server_enhanced", "memory_manager", "database", "sequential_thinking", "project_conventions", "enhanced_automation_middleware"]
 
 [tool.setuptools.package-data]
 "*" = ["*.py"]

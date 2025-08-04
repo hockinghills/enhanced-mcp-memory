@@ -30,7 +30,7 @@ from enhanced_automation_middleware import EnhancedAutomationMiddleware
 # Configure logging
 base_dir = Path(os.path.abspath(os.getenv(
     'DATA_DIR',
-    os.getenv('HOME')+'/ClaudeMemory')))
+    os.path.join(os.path.expanduser('~'), 'ClaudeMemory'))))
 base_dir.mkdir(exist_ok=True)
 log_dir = base_dir / "logs"
 log_dir.mkdir(exist_ok=True)

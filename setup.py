@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="enhanced-mcp-memory",
-    version="2.0.2",
+    version="2.0.8",
     description="MCP server with sequential thinking, project convention learning, and intelligent memory management",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -20,7 +20,8 @@ setup(
         "memory_manager", 
         "database", 
         "sequential_thinking", 
-        "project_conventions"
+        "project_conventions",
+        "enhanced_automation_middleware"
     ],
     install_requires=requirements,
     entry_points={
