@@ -28,7 +28,10 @@ from project_conventions import ProjectConventionLearner
 from enhanced_automation_middleware import EnhancedAutomationMiddleware
 
 # Configure logging
-base_dir = Path(os.path.dirname(os.path.abspath(__file__)))
+base_dir = Path(os.path.abspath(os.getenv(
+    'DATA_DIR',
+    os.getenv('HOME')+'/ClaudeMemory')))
+base_dir.mkdir(exist_ok=True)
 log_dir = base_dir / "logs"
 log_dir.mkdir(exist_ok=True)
 log_file = log_dir / f"mcp_memory_{datetime.now().strftime('%Y%m%d')}.log"
@@ -301,6 +304,31 @@ def get_tasks(status: str = None, limit: int = 20) -> str:
     except Exception as e:
         logger.error(f"Error getting tasks: {e}")
         return f"Error getting tasks: {str(e)}"
+
+@mcp.tool()
+@track_performance
+def update_task_status(task_id: str, status: str) -> str:
+    """Update task status (pending, in_progress, completed, cancelled)"""
+    try:
+        if not memory_manager.current_project_id:
+            return "No active project. Cannot update task."
+            
+        # Validate status
+        valid_statuses = ['pending', 'in_progress', 'completed', 'cancelled']
+        if status not in valid_statuses:
+            return f"⚠️ Invalid status. Must be one of: {', '.join(valid_statuses)}"
+            
+        success = db_manager.update_task_status(task_id, status)
+        
+        if success:
+            logger.info(f"Updated task {task_id[:8]}... to status: {status}")
+            return f"✅ Task status updated to '{status}'"
+        else:
+            return f"⚠️ Task not found or update failed"
+            
+    except Exception as e:
+        logger.error(f"Error updating task status: {e}")
+        return f"⚠️ Error updating task: {str(e)}"
 
 @mcp.tool()
 @track_performance
