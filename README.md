@@ -72,7 +72,6 @@ enhanced-mcp-memory/
 ├── setup.py                # Package configuration
 ├── data/                   # SQLite database storage
 ├── logs/                   # Application logs
-└── tests/                  # Comprehensive test suite
 ```
 
 ## 🚀 Quick Start
@@ -238,36 +237,7 @@ Configure via environment variables:
 
 ## 🧪 Testing
 
-Run the test suite to verify functionality:
-
-```bash
-# Run all tests including new sequential thinking and convention tests
-python tests\test_enhanced_features.py
-python tests\test_new_project_system.py
-python tests\test_project_tools.py
-python tests\test_sequential_thinking.py
-python tests\test_project_conventions.py
-
-# Or run comprehensive test runner
-python run_tests.py
-```
-
-The test suite validates:
-- ✅ Sequential thinking chains and token optimization
-- ✅ Context compression achieving 30-70% reduction
-- ✅ Project convention learning and persistence
-- ✅ Memory storage and retrieval
-- ✅ Task creation and management
-- ✅ Performance monitoring and health checks
-- ✅ Windows-specific command detection
-- ✅ MCP protocol compliance
-
-# Test MCP protocol
-python test_mcp_protocol.py
-
-# Run complete test suite
-python run_tests.py
-```
+This package is production-ready and does not include a test suite in the distributed version. For development or CI, refer to the repository for test scripts and additional resources.
 
 ## 📊 Performance & Monitoring
 

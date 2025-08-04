@@ -14,6 +14,7 @@ from typing import Dict, List, Optional, Any, Tuple
 from datetime import datetime, timedelta
 from pathlib import Path
 from database import DatabaseManager
+from project_conventions import ProjectConventionLearner
 
 try:
     from sentence_transformers import SentenceTransformer
@@ -23,12 +24,13 @@ except ImportError:
     print("Warning: sentence-transformers not available. Semantic search disabled.")
 
 class MemoryManager:
-    def __init__(self, db_manager: DatabaseManager):
+    def __init__(self, db_manager: DatabaseManager, convention_learner: ProjectConventionLearner = None):
         self.db = db_manager
         self.current_session_id = None
         self.current_project_id = None
         self.context_window = []  # Rolling context window
         self.max_context_size = 50
+        self.convention_learner = convention_learner
         
         # Initialize embedding model for semantic search
         self.embedding_model = None
@@ -51,6 +53,13 @@ class MemoryManager:
             path=project_path,
             description=project_description
         )
+
+        # Automatically learn project conventions on project switch
+        if self.convention_learner:
+            try:
+                self.convention_learner.auto_learn_project_conventions()
+            except Exception as e:
+                logging.warning(f"Convention learning failed: {e}")
         
         # Create new session
         session_uuid = self.generate_id()
@@ -515,6 +524,14 @@ class MemoryManager:
         
         # Switch to this project
         self.current_project_id = project_id
+
+        # Automatically learn project conventions on new project
+        if self.convention_learner:
+            try:
+                self.convention_learner.auto_learn_project_conventions()
+            except Exception as e:
+                logging.warning(f"Convention learning failed: {e}")
+
         self.load_relevant_memories()
         
         logging.info(f"Created new project from prompt: {project_name}")
