@@ -1,6 +1,7 @@
 {
-    "name": "fastapi-worker",
-    "main": "src/worker.py",
+    // wrangler.jsonc
+    "name": "enhanced-memory",
+    "main": "setup.py",
     "compatibility_flags": [
         "python_workers",
     ],
