@@ -1,0 +1,29 @@
+name = "enhanced-memory"
+main = "src/test.js"
+compatibility_date = "2024-12-01"
+
+# D1 Database binding for persistent storage
+[[d1_databases]]
+binding = "DB"
+database_name = "mcp-memory"
+database_id = "d065bfca-7e61-4d9f-abfc-1850b208ae71"
+
+# KV namespace for caching
+[[kv_namespaces]]
+binding = "KV_CACHE"
+id = "ce778a55fa2143368b0c050f5d817ec2"
+
+# R2 bucket for file storage
+[[r2_buckets]]
+binding = "R2_STORAGE"
+bucket_name = "mcp-storage"
+
+# Workers AI binding for embeddings
+[ai]
+binding = "AI"
+
+# Environment variables
+[vars]
+LOG_LEVEL = "INFO"
+MAX_MEMORY_ITEMS = "1000"
+ENABLE_AUTO_CLEANUP = "true"

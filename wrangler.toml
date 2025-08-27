@@ -1,0 +1,61 @@
+name = "enhanced-memory"
+main = "src/test_worker.py"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["python_workers"]
+
+# Durable Objects configuration
+[[durable_objects.bindings]]
+name = "MEMORY_MCP"
+class_name = "MemoryManagerMCP"
+
+# D1 Database binding for persistent storage
+[[d1_databases]]
+binding = "DB"
+database_name = "mcp-memory"
+database_id = "d065bfca-7e61-4d9f-abfc-1850b208ae71"
+
+# KV namespace for caching
+[[kv_namespaces]]
+binding = "KV_CACHE"
+id = "ce778a55fa2143368b0c050f5d817ec2"
+
+# R2 bucket for file storage
+[[r2_buckets]]
+binding = "R2_STORAGE"
+bucket_name = "mcp-storage"
+
+# Workers AI binding for embeddings
+[ai]
+binding = "AI"
+
+# Vectorize binding for vector search (optional - can use D1 instead)
+# [[vectorize]]
+# binding = "VECTORIZE"
+# index_name = "mcp-embeddings"
+
+# Environment variables
+[vars]
+LOG_LEVEL = "INFO"
+MAX_MEMORY_ITEMS = "1000"
+ENABLE_AUTO_CLEANUP = "true"
+MAX_CONTEXT_TOKENS = "8000"
+CLEANUP_INTERVAL_HOURS = "24"
+
+# Development configuration
+[env.development]
+[env.development.vars]
+LOG_LEVEL = "DEBUG"
+
+# Production configuration  
+[env.production]
+[env.production.vars]
+LOG_LEVEL = "INFO"
+
+# Migrations for Durable Objects
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["MemoryManagerMCP"]
+
+# Observability
+[observability]
+enabled = true
